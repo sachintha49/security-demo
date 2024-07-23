@@ -9,7 +9,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/ ")
+@RequestMapping("/api/v1/user")
 @CrossOrigin
 public class LoginController {
 

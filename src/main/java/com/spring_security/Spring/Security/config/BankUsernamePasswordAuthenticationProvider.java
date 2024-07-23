@@ -48,6 +48,7 @@ private PasswordEncoder passwordEncoder;
         }else {
             throw new BadCredentialsException("No User Registered with this details");
         }
+        /*meeta amatharawa authentication ekak wena atharathura thawa monawa hari run wenna one nam api ewa filters wala liyanawa*/
     }
 
     @Override

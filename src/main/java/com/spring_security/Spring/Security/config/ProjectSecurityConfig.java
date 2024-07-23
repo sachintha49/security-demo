@@ -22,6 +22,7 @@ public class ProjectSecurityConfig {
     @Bean
     SecurityFilterChain defaultSecurityFilterChain(HttpSecurity http) throws Exception{
         http.csrf().disable()
+                /*ona kenketa mekata access karanna puluwan(url) but authentication ekak thiyenna one*/
                 .authorizeRequests()
                 .antMatchers("/api/v1/account/my-account","/api/v1/loan/my-loan").authenticated()
                 .antMatchers("/api/v1/notice/my-notice").permitAll()
@@ -29,21 +30,6 @@ public class ProjectSecurityConfig {
         return http.build();
     }
 
-//    @Bean
-//    public InMemoryUserDetailsManager userDetailsService(){
-//        UserDetails admin = User.withDefaultPasswordEncoder()
-//                .username("admin")
-//                .password("12345")
-//                .authorities("admin")
-//                .build();
-//
-//        return new InMemoryUserDetailsManager(admin);
-//    }
-//
-//    @Bean
-//    public UserDetailsService userDetailsService(DataSource dataSource){
-//        return new JdbcUserDetailsManager(dataSource);
-//    }
 
     @Bean/*meka container ekata dagannawa use karanna kalin.*/
     public PasswordEncoder passwordEncoder(){
